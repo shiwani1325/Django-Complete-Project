@@ -1,0 +1,81 @@
+{% extends "base/base.html"%} {% block start %}
+
+<div class="container py-5">
+  <div class="row py-5">
+    <form method="POST" class="col-md-9 m-auto" role="form">
+      {% csrf_token %}
+
+      <div class="row">
+        {% comment %}
+        <div class="form-group col-md-6 mb-3">
+          <label for="inputname" class="row">Name</label>
+          <input
+            type="text"
+            class="form-control mt-1"
+            id="inputname"
+            name="full_name"
+            required
+            placeholder="Name"
+          />
+        </div>
+        {% endcomment %}
+        <div class="form-group col-md-6 mb-3">
+          <label for="inputemail">Email</label>
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="inputemail"
+            name="email"
+            required
+            placeholder="Email"
+          />
+        </div>
+        <div class="row">
+          <div class="form-goup col-md-6 mb-3">
+            <label for="inputpassword">Password</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control mt-1"
+              id="inputpassword"
+              required
+              placeholder="Password"
+            />
+          </div>
+        </div>
+      </div>
+      {% comment %}
+      <div class="mb-3">
+        <label for="inputsubject">Subject</label>
+        <input
+          type="text"
+          class="form-control mt-1"
+          id="subject"
+          name="subject"
+          placeholder="Subject"
+        />
+      </div>
+      {% endcomment %} {% comment %}
+      <div class="mb-3">
+        <label for="inputmessage">Message</label>
+        <textarea
+          class="form-control mt-1"
+          id="message"
+          name="message"
+          placeholder="Message"
+          rows="8"
+        ></textarea>
+      </div>
+      {% endcomment %}
+      <div class="row">
+        <div class="col col-md-6 mb-3 text-end mt-2">
+          <button type="submit" class="btn btn-success btn-lg px-3">
+            Submit Button
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

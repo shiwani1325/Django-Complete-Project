@@ -1,0 +1,51 @@
+{% extends "base/base.html"%}
+
+{% block start %}
+
+
+
+<div class="container py-5">
+    <div class="row py-5">
+        <form method="POST" class="col-md-10 m-auto"  role="form" >
+            {% csrf_token %}
+            {% include "base/alert.html" %}
+           
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label for="inputname">Name</label>
+                    <input name="full_name" type="text" class="form-control mt-1" id="inputname"  required placeholder="Name">
+                </div> 
+                <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label for="inputmail">Email</label>
+                    <input name="email" type="email" class="form-control mt-1" id="inputemail"  required placeholder="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 mb-3" >
+                    <label for="inputpassword">Password</label>
+                    <input  name="password"  type="password" class="form-control mt-1" id="inputpassword"required placeholder="Password">
+                </div>
+            </div>
+            </div>
+            {% comment %} <div class="mb-3">
+                <label for="inputsubject">Subject</label>
+                <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
+            </div> {% endcomment %}
+            {% comment %} <div class="mb-3">
+                <label for="inputmessage">Message</label>
+                <textarea class="form-control mt-1" id="message" name="message" placeholder="Message" rows="8"></textarea>
+            </div> {% endcomment %}
+            <div class="row  col-md-6 mb-3 text-end mt-2" >
+                <div class="col text-end mt-2">
+                    <button type="submit" class="btn btn-success btn-lg px-3">Submit Button</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+ 
